@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace CafeUI
 {
-    class Program
+    public class ProgramUI
     {
-        static void Main(string[] args)
+
+        public void Run()
         {
-            ProgramUI program = new ProgramUI();
-            program.Run();
+            AppMenu();
+        }
+
+        private void AppMenu()
+        {
+
         }
     }
 }
