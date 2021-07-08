@@ -11,7 +11,7 @@ namespace CafePOCO
         public int MealNumber { get; set; }
         public string MealName { get; set; }
         public string Description { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         public string Ingredients { get; set; }
 
         public MenuItem()
@@ -19,9 +19,12 @@ namespace CafePOCO
 
         }
 
-        public MenuItem(int mealNumber, string mealName, string description, string ingredients, decimal price)
+        public MenuItem(string mealName, string description, string ingredients, double price)
         {
-
+            this.MealName = mealName;
+            this.Description = description;
+            this.Ingredients = ingredients;
+            this.Price = price;
         }
 
     }
