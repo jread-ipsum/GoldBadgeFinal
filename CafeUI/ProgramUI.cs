@@ -74,7 +74,26 @@ namespace CafeUI
 
         private void AddItemToMenu()
         {
+            MenuItem newMenuItem = new MenuItem();
 
+            Console.WriteLine("Enter a meal name.");
+            newMenuItem.MealName = Console.ReadLine();
+
+            Console.Clear();
+            Console.WriteLine("Enter a meal description.");
+            newMenuItem.Description = Console.ReadLine();
+
+            Console.Clear();
+            Console.WriteLine("Enter the meal ingredients.");
+            newMenuItem.Ingredients = Console.ReadLine();
+
+            Console.Clear();
+            Console.WriteLine("Enter a price for the meal.");
+            newMenuItem.Price = double.Parse(Console.ReadLine());
+
+            _menuItemRepository.AddItemsToMenu(newMenuItem);
+
+            Console.WriteLine("\nItem has been added to the Menu.");
         }
 
         private void RemoveItemFromMenu()
