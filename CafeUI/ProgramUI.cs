@@ -98,7 +98,21 @@ namespace CafeUI
 
         private void RemoveItemFromMenu()
         {
+            Console.Clear();
 
+            Console.WriteLine("Enter the meal number for the item you would like to remove.");
+            int mealNumber = int.Parse(Console.ReadLine());
+
+            MenuItem menuItem = _menuItemRepository.GetItemByMealNumber(mealNumber);
+            if (menuItem is null)
+            {
+                Console.WriteLine("\nSorry, no menu item found");
+            }
+            else
+            {
+                _menuItemRepository.RemoveItemFromMenu(mealNumber);
+                Console.WriteLine("\nItem has been removed from the menu.");
+            }
         }
 
         private void SeedMenu()
