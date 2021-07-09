@@ -15,12 +15,12 @@ namespace ClaimsPOCO
         public double ClaimAmount { get; set; }
         public DateTime DateOfIncident { get; set; }
         public DateTime DateOfClaim { get; set; }
-        public bool IsValid() 
-        {
-            if(claimAge <= TimeSpan(30, 0, 0, 0)
-        }
+        public bool IsValid { get; set; } 
+        //{
+        //    if(claimAge <= TimeSpan(30, 0, 0, 0)
+        //}
 
-        private TimeSpan claimAge = 
+        //private TimeSpan claimAge = 
 
         public Claim()
         {
@@ -32,10 +32,10 @@ namespace ClaimsPOCO
 
         }
 
-        public Claim(TimeSpan claimAge, TimeSpan claimLimit)
-        {
-            claimAge = DateOfClaim - DateOfIncident;
-            claimLimit = TimeSpan(30, 0, 0, 0);
-        }
+        //public Claim(TimeSpan claimAge, TimeSpan claimLimit)
+        //{
+        //    claimAge = DateOfClaim - DateOfIncident;
+         //   claimLimit = TimeSpan(30, 0, 0, 0);
+        //}
     }
 }
