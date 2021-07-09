@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CafePOCO;
+using CafeRepo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +10,10 @@ namespace CafeUI
 {
     public class ProgramUI
     {
-
+        private readonly MenuItemRepository _menuItemRepository = new MenuItemRepository();
         public void Run()
         {
+            SeedMenu();
             AppMenu();
         }
 
@@ -55,7 +58,18 @@ namespace CafeUI
 
         private void ViewMenu()
         {
+            Console.Clear();
+            Console.WriteLine("--------------------------------MENU-------------------------------");
 
+            List<MenuItem> menuItems = _menuItemRepository.GetMenu(); 
+            foreach(MenuItem menuItem in menuItems)
+            {
+                Console.WriteLine($"-------------------------------------------------------------------\n" +
+                    $"{menuItem.MealNumber} {menuItem.MealName}\n\n" +
+                    $"{menuItem.Description}\n" +
+                    $"Ingredients: {menuItem.Ingredients}\n" +
+                    $"Price: {menuItem.Price}\n");
+            }
         }
 
         private void AddItemToMenu()
@@ -66,6 +80,19 @@ namespace CafeUI
         private void RemoveItemFromMenu()
         {
 
+        }
+
+        private void SeedMenu()
+        {
+            MenuItem menuItem1 = new MenuItem("BLT", "Bacon, Lettuce, and Tomato Sandwich", "Bread, Bacon, Lettuce, Tomato", 4.99);
+            MenuItem menuItem2 = new MenuItem("Turkey Sandwich", "Our famous loaded turkey sandwich", "Roasted Turkey Breast, Swiss Cheese, Tomato, Onion, Lettuce, Rye Bread", 6.99);
+            MenuItem menuItem3 = new MenuItem("Loaded Baked Potato", "A giant russet potato with all the fixins", "Potato, Sour Cream, Bacon, Cheddar Cheese, Green Onions, Butter", 5.49);
+            MenuItem menuItem4 = new MenuItem("House Salad", "A mixed greens salad with enough substance to fill any stomach", "Mixed Greens, Sliced Apples, Candied Almonds, Cranberries, Prosecco Pear Vinaigrette", 5.79);
+
+            _menuItemRepository.AddItemsToMenu(menuItem1);
+            _menuItemRepository.AddItemsToMenu(menuItem2);
+            _menuItemRepository.AddItemsToMenu(menuItem3);
+            _menuItemRepository.AddItemsToMenu(menuItem4);
         }
     }
 }

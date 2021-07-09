@@ -1,0 +1,12 @@
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\bin\Debug\CafeUI.exe.config
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\bin\Debug\CafeUI.exe
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\bin\Debug\CafeUI.pdb
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\bin\Debug\CafePOCO.dll
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\bin\Debug\CafeRepo.dll
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\bin\Debug\CafePOCO.pdb
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\bin\Debug\CafeRepo.pdb
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\obj\Debug\CafeUI.csproj.AssemblyReference.cache
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\obj\Debug\CafeUI.csproj.CoreCompileInputs.cache
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\obj\Debug\CafeUI.csproj.CopyComplete
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\obj\Debug\CafeUI.exe
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\CafeUI\obj\Debug\CafeUI.pdb
