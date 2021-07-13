@@ -91,7 +91,17 @@ namespace ClaimsUI
 
         private void NewClaim()
         {
+            Claim newClaim = new Claim();
 
+            Console.Clear();
+            Console.WriteLine("Enter the claim type:\n" +
+                "Enter 1 for car.\n" +
+                "Enter 2 for home.\n" +
+                "Enter 3 for theft.\n");
+            int inputClaimType = int.Parse(Console.ReadLine());
+            Claim.ClaimType claimType = (Claim.ClaimType)inputClaimType;
+
+            
         }
 
         private void SeedClaims()

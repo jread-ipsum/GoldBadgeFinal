@@ -9,7 +9,7 @@ namespace ClaimsPOCO
     public class Claim
     {
         public int ClaimID { get; set; }
-        public enum ClaimType { car, home, theft, }
+        public enum ClaimType { car=1, home, theft, }
         public ClaimType Type { get; set; }
         public string Description { get; set; }
         public double ClaimAmount { get; set; }
