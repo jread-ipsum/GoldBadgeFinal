@@ -1,0 +1,6 @@
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\ClaimsPOCO\bin\Debug\ClaimsPOCO.dll
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\ClaimsPOCO\bin\Debug\ClaimsPOCO.pdb
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\ClaimsPOCO\obj\Debug\ClaimsPOCO.csproj.AssemblyReference.cache
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\ClaimsPOCO\obj\Debug\ClaimsPOCO.csproj.CoreCompileInputs.cache
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\ClaimsPOCO\obj\Debug\ClaimsPOCO.dll
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\ClaimsPOCO\obj\Debug\ClaimsPOCO.pdb

@@ -27,9 +27,14 @@ namespace ClaimsPOCO
 
         }
 
-        public Claim(ClaimType type, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
+        public Claim(ClaimType type, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim, bool isValid)
         {
-
+            this.Type = type;
+            this.Description = description;
+            this.ClaimAmount = claimAmount;
+            this.DateOfIncident = dateOfIncident;
+            this.DateOfClaim = dateOfClaim;
+            this.IsValid = isValid;
         }
 
         //public Claim(TimeSpan claimAge, TimeSpan claimLimit)
