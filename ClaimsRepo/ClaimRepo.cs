@@ -31,10 +31,16 @@ namespace ClaimsRepo
             return _claims;
         }
 
-        //update
+        public Claim SeeNextClaim()
+        {
+            return _claims.Peek();
+        }
+
+        //delete
         public Claim RemoveClaimFromQueue()
         {
             return _claims.Dequeue();
+
         }
 
     }

@@ -58,6 +58,7 @@ namespace ClaimsUI
 
         private void SeeAllClaims()
         {
+            Console.Clear();
             Console.WriteLine("======Claims Queue=======\n");
             Console.WriteLine("ClaimID Type Description    Amount  DateOfAccident DateOfClaim IsValid");
 
@@ -70,7 +71,22 @@ namespace ClaimsUI
 
         private void NextClaim()
         {
+            Console.Clear();
+            Claim peekClaim = _claimRepo.SeeNextClaim();
+            Console.WriteLine($"ClaimID:{peekClaim.ClaimID}\n" +
+                $"Type: {peekClaim.Type}\n" +
+                $"Description: {peekClaim.Description}\n" +
+                $"Amount: {peekClaim.ClaimAmount}\n" +
+                $"Date of Accident: {peekClaim.DateOfIncident}\n" +
+                $"Date of Claim: {peekClaim.DateOfClaim}\n" +
+                $"IsValid: {peekClaim.IsValid}\n");
 
+            Console.WriteLine("Do you want to deal with this claim now(y/n)?");
+            var dealNow = Console.ReadLine();
+            if(dealNow is "y")
+            {
+                _claimRepo.RemoveClaimFromQueue();
+            }
         }
 
         private void NewClaim()
