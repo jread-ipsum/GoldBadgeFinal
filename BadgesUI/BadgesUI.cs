@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BadgesPOCO
+namespace BadgesUI
 {
-    public class Class1
+    class BadgesUI
     {
     }
 }
