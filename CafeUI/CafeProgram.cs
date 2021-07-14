@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CafeUI
 {
-    class Program
+    class CafeProgram
     {
         static void Main(string[] args)
         {
-            ProgramUI program = new ProgramUI();
+            CafeUI program = new CafeUI();
             program.Run();
         }
     }

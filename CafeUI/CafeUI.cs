@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CafeUI
 {
-    public class ProgramUI
+    public class CafeUI
     {
         private readonly MenuItemRepository _menuItemRepository = new MenuItemRepository();
         public void Run()

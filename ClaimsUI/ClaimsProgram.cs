@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ClaimsUI
 {
-    class Program
+    class ClaimsProgram
     {
         static void Main(string[] args)
         {
-            ProgramUI program = new ProgramUI();
+            ClaimsUI program = new ClaimsUI();
             program.Run();
         }
     }

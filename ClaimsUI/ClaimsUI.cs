@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClaimsUI
 {
-    public class ProgramUI
+    public class ClaimsUI
     {
         private readonly ClaimRepo _claimRepo = new ClaimRepo();
         public void Run()
@@ -50,7 +50,7 @@ namespace ClaimsUI
                         break;
                 }
 
-                Console.WriteLine("press any key to continue...");
+                Console.WriteLine("\npress any key to continue...");
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -62,12 +62,12 @@ namespace ClaimsUI
             Console.Clear();
             Console.WriteLine("==========================Claims Queue==========================\n");
 
-            Console.WriteLine($"{"ID",-3}{"Type",-6}{"Description",-25}{"Amount",-10}{"DateAccident",-12}{"DateClaim",-12}{"IsValid",-7}");
+            Console.WriteLine($"{"ID",-3}{"Type",-6}{"Description",-25}{"Amount",-8}{"DateAccident",-13}{"DateClaim",-13}{"IsValid",-7}\n");
 
             Queue<Claim> claims = _claimRepo.GetAllClaims();
             foreach(Claim claim in claims)
             {
-                Console.WriteLine($"{claim.ClaimID,-3}{claim.Type,-6}{claim.Description,-25}{claim.ClaimAmount,-10}{claim.DateOfIncident.Date.ToString("d"),-12}{claim.DateOfClaim.Date.ToString("d"),-12}{claim.IsValid,-7}");
+                Console.WriteLine($"{claim.ClaimID,-3}{claim.Type,-6}{claim.Description,-25}{claim.ClaimAmount,-8}{claim.DateOfIncident.Date.ToString("d"),-13}{claim.DateOfClaim.Date.ToString("d"),-13}{claim.IsValid,-7}");
             }
         }
 
@@ -79,8 +79,8 @@ namespace ClaimsUI
                 $"Type: {peekClaim.Type}\n" +
                 $"Description: {peekClaim.Description}\n" +
                 $"Amount: {peekClaim.ClaimAmount}\n" +
-                $"Date of Accident: {peekClaim.DateOfIncident}\n" +
-                $"Date of Claim: {peekClaim.DateOfClaim}\n" +
+                $"Date of Accident: {peekClaim.DateOfIncident.Date.ToString("d")}\n" +
+                $"Date of Claim: {peekClaim.DateOfClaim.Date.ToString("d")}\n" +
                 $"IsValid: {peekClaim.IsValid}\n");
 
             Console.WriteLine("Do you want to deal with this claim now(y/n)?");
@@ -102,16 +102,16 @@ namespace ClaimsUI
             int inputClaimType = int.Parse(Console.ReadLine());
             Claim.ClaimType claimType = (Claim.ClaimType)inputClaimType;
 
-            Console.WriteLine("Enter a description of the claim.");
+            Console.WriteLine("\nEnter a description of the claim.");
             var description = Console.ReadLine();
 
-            Console.WriteLine("Enter the claim amount.");
+            Console.WriteLine("\nEnter the claim amount.");
             double claimAmount = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter date of the incident(yyyy,mm,dd)");
+            Console.WriteLine("\nEnter date of the incident(yyyy,mm,dd)");
             var incidentDate = DateTime.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the date of the claim(yyyy,mm,dd)");
+            Console.WriteLine("\nEnter the date of the claim(yyyy,mm,dd)");
             var claimDate = DateTime.Parse(Console.ReadLine());
 
             Claim newClaim = new Claim(claimType, description, claimAmount, incidentDate, claimDate);
