@@ -13,7 +13,7 @@ namespace ClaimsUnitTest
         [TestInitialize]
         public void Arrange()
         {
-            Claim claim = new Claim(Claim.ClaimType.car, "wreck", 200.00, new DateTime(2021, 8, 15), new DateTime(2021, 7, 20), true);
+            Claim claim = new Claim(Claim.ClaimType.car, "wreck", 200.00, new DateTime(2021, 8, 15), new DateTime(2021, 7, 20));
             _repo.AddClaimToQueue(claim);
         }
 
@@ -31,7 +31,7 @@ namespace ClaimsUnitTest
         [TestMethod]
         public void AddClaimToQueue_ClaimIsNotNull_ReturnTrue()
         {
-            Claim claim = new Claim(Claim.ClaimType.car, "wreck", 200.00, new DateTime(2021, 8, 15), new DateTime(2021, 7, 20), true);
+            Claim claim = new Claim(Claim.ClaimType.car, "wreck", 200.00, new DateTime(2021, 8, 15), new DateTime(2021, 7, 20));
 
             bool result = _repo.AddClaimToQueue(claim);
 
@@ -42,6 +42,7 @@ namespace ClaimsUnitTest
         public void RemoveClaimFromQueue_ClaimDequeued()
         {
             Claim result = _repo.RemoveClaimFromQueue();
+
             Assert.IsNotNull(result);
         }
     }

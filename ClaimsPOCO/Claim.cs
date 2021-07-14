@@ -9,38 +9,38 @@ namespace ClaimsPOCO
     public class Claim
     {
         public int ClaimID { get; set; }
-        public enum ClaimType { car=1, home, theft, }
+        public enum ClaimType { car=1  , home , theft,}
         public ClaimType Type { get; set; }
         public string Description { get; set; }
         public double ClaimAmount { get; set; }
         public DateTime DateOfIncident { get; set; }
         public DateTime DateOfClaim { get; set; }
-        public bool IsValid { get; set; } 
-        //{
-        //    if(claimAge <= TimeSpan(30, 0, 0, 0)
-        //}
-
-        //private TimeSpan claimAge = 
+        public bool IsValid
+        {
+            get
+            {
+                var claimAge = DateOfClaim - DateOfIncident;
+                if (claimAge.TotalDays <= 30.00)
+                {
+                    return true;
+                }
+                return false;
+                    
+            }
+        } 
 
         public Claim()
         {
 
         }
 
-        public Claim(ClaimType type, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim, bool isValid)
+        public Claim(ClaimType type, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
         {
             this.Type = type;
             this.Description = description;
             this.ClaimAmount = claimAmount;
             this.DateOfIncident = dateOfIncident;
             this.DateOfClaim = dateOfClaim;
-            this.IsValid = isValid;
         }
-
-        //public Claim(TimeSpan claimAge, TimeSpan claimLimit)
-        //{
-        //    claimAge = DateOfClaim - DateOfIncident;
-         //   claimLimit = TimeSpan(30, 0, 0, 0);
-        //}
     }
 }
