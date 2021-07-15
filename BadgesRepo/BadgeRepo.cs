@@ -12,11 +12,17 @@ namespace BadgesRepo
         Dictionary<int, List<string>> _badgesDict = new Dictionary<int, List<string>>();
 
         //create
-        public void AddBadgeToDict(Badge badge)
+        public bool AddBadgeToDict(Badge badge)
         {
             if(!_badgesDict.ContainsKey(badge.ID))
             {
                 _badgesDict.Add(badge.ID, badge.Doors);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("ID already exists.");
+                return false;
             }
         }
         //read
@@ -25,18 +31,29 @@ namespace BadgesRepo
             return _badgesDict;
         }
         //update
-
+        public bool UpdateBadgeDoors(Badge badge)
+        {
+            if(_badgesDict.ContainsKey(badge.ID))
+            {
+                _badgesDict[badge.ID] = badge.Doors;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         //delete
 
         //helper
-        public Badge GetBadgeById(int iD)
+         public Badge GetBadgeById(int iD)
         {
             foreach(KeyValuePair<int, List<string>> kvp in _badgesDict)
             {
                 if(kvp.Key == iD)
                 {
-                    return kvp.value;
+
                 }
             }
             return null;

@@ -1,0 +1,9 @@
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesRepo\bin\Debug\BadgesRepo.dll
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesRepo\bin\Debug\BadgesRepo.pdb
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesRepo\bin\Debug\BadgesPOCO.dll
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesRepo\bin\Debug\BadgesPOCO.pdb
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesRepo\obj\Debug\BadgesRepo.csproj.AssemblyReference.cache
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesRepo\obj\Debug\BadgesRepo.csproj.CoreCompileInputs.cache
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesRepo\obj\Debug\BadgesRepo.csproj.CopyComplete
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesRepo\obj\Debug\BadgesRepo.dll
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesRepo\obj\Debug\BadgesRepo.pdb

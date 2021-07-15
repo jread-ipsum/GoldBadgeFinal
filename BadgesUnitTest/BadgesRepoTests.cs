@@ -10,23 +10,39 @@ namespace BadgesUnitTest
     public class BadgesRepoTests
     {
         private BadgeRepo _repo;
-        private Badge _badge;
-        private Badge _badge2;
+        private Badge badge;
 
         [TestInitialize]
         public void Arrange()
         {
             _repo = new BadgeRepo();
-            _badge = new Badge(1, new List<string> { "A1","A2","B1","B2"});
+            badge = new Badge(1, new List<string> { "A1","A2","B1","B2"});
 
-            _repo.AddBadgeToDict(_badge);
+            _repo.AddBadgeToDict(badge);
         }
 
+        [TestMethod]
+        public void AddBadgeToDict_DoesNotContainKey_ReturnTrue()
+        {
+            Badge badge2 = new Badge(2, new List<string> { "A1", "A2", "B1", "B2" });
 
-            
+            bool result = _repo.AddBadgeToDict(badge2);
+
+            Assert.IsTrue(result);
+        }
 
         [TestMethod]
-        public void AddBadgeToDict_ShouldNotGetNull()
+        public void AddBadgeToDict_AlreadyContainsKey_ReturnFalse()
+        {
+            Badge badge2 = new Badge(1, new List<string> { "A1", "A2", "B1", "B2" });
+
+            bool result = _repo.AddBadgeToDict(badge2);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void MyTestMethod()
         {
 
         }

@@ -1,0 +1,6 @@
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesPOCO\bin\Debug\BadgesPOCO.dll
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesPOCO\bin\Debug\BadgesPOCO.pdb
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesPOCO\obj\Debug\BadgesPOCO.csproj.AssemblyReference.cache
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesPOCO\obj\Debug\BadgesPOCO.csproj.CoreCompileInputs.cache
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesPOCO\obj\Debug\BadgesPOCO.dll
+C:\Users\Jordan&Nidya\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadgeFinalChallenges\BadgesPOCO\obj\Debug\BadgesPOCO.pdb
