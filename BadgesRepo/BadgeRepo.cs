@@ -33,6 +33,7 @@ namespace BadgesRepo
         //update
         public bool UpdateBadgeDoors(Badge badge)
         {
+            
             if(_badgesDict.ContainsKey(badge.ID))
             {
                 _badgesDict[badge.ID] = badge.Doors;
@@ -44,16 +45,14 @@ namespace BadgesRepo
             }
         }
 
-        //delete
-
         //helper
-         public Badge GetBadgeById(int iD)
+        public Badge getbadgebyid(int id)
         {
-            foreach(KeyValuePair<int, List<string>> kvp in _badgesDict)
+            foreach (KeyValuePair<int, List<string>> kvp in _badgesDict)
             {
-                if(kvp.Key == iD)
+                if (kvp.Key == id)
                 {
-
+                    return new Badge(kvp.Key, kvp.Value);
                 }
             }
             return null;
