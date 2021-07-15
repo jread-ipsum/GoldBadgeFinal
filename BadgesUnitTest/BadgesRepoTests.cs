@@ -42,9 +42,41 @@ namespace BadgesUnitTest
         }
 
         [TestMethod]
-        public void MyTestMethod()
+        public void UpdateBadgeDoors_ContainsKey_ReturnTrue()
         {
+            bool result = _repo.UpdateBadgeDoors(badge);
 
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void UpdateBadgeDoors_DoesNotContainKey_ReturnFalse()
+        {
+            Badge badge2 = new Badge(2, new List<string> { "A1", "A2", "B1", "B2" });
+
+            bool result = _repo.UpdateBadgeDoors(badge2);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void GetBadgeById_BadgeExists_ReturnIsNotNull()
+        {
+            int id = 1;
+
+            Badge result = _repo.GetBadgeById(id);
+
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void GetBadgeById_BadgeDoesNotExist_ReturnNull()
+        {
+            int id = 3;
+
+            Badge result = _repo.GetBadgeById(id);
+
+            Assert.IsNull(result);
         }
     }
 }

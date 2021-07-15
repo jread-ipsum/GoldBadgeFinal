@@ -39,6 +39,11 @@ namespace BadgesRepo
                 _badgesDict[badge.ID] = badge.Doors;
                 return true;
             }
+            if(!_badgesDict.ContainsKey(badge.ID))
+            {
+                Console.WriteLine("ID does not exist.");
+                return false;
+            }
             else
             {
                 return false;
@@ -46,7 +51,7 @@ namespace BadgesRepo
         }
 
         //helper
-        public Badge getbadgebyid(int id)
+        public Badge GetBadgeById(int id)
         {
             foreach (KeyValuePair<int, List<string>> kvp in _badgesDict)
             {
