@@ -8,5 +8,9 @@ namespace BadgesUI
 {
     class BadgesUI
     {
+        public void Run()
+        {
+            AppMenu();
+        }
     }
 }
