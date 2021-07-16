@@ -30,26 +30,7 @@ namespace BadgesRepo
         {
             return _badgesDict;
         }
-        //update
-        public bool UpdateBadgeDoors(Badge badge)
-        {
-            
-            if(_badgesDict.ContainsKey(badge.ID))
-            {
-                _badgesDict[badge.ID] = badge.Doors;
-                return true;
-            }
-            if(!_badgesDict.ContainsKey(badge.ID))
-            {
-                Console.WriteLine("ID does not exist.");
-                return false;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
+        
         //helper
         public Badge GetBadgeById(int id)
         {

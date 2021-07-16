@@ -28,7 +28,7 @@ namespace BadgesUI
                     "3.List all badges\n" +
                     "4.Exit app\n");
 
-                string menuInput = Console.ReadLine();
+                var menuInput = Console.ReadLine();
                 switch (menuInput)
                 {
                     case "1":
@@ -98,7 +98,49 @@ namespace BadgesUI
 
         private void EditBadge()
         {
+            Console.Clear();
 
+            Console.WriteLine("What is the badge number to update?");
+            var badgeId = int.Parse(Console.ReadLine());
+
+            Badge badge = _badgeRepo.GetBadgeById(badgeId);
+            if(badge is null)
+            {
+                Console.WriteLine("Badge does not exist.");
+            }
+            Console.WriteLine($"{badge.ID} has access to doors {String.Join(" ",badge.Doors)}\n");
+
+            bool addRemoveDoors = true;
+            while (addRemoveDoors)
+            {
+                Console.WriteLine("What would you like to do?\n" +
+                    "1.Remove a door\n" +
+                    "2.Add a door\n" +
+                    "3.Exit to menu\n");
+
+                var subMenuInput = Console.ReadLine();
+                switch (subMenuInput)
+                {
+                    case "1":
+                        Console.WriteLine("Which door would you like to remove?");
+                        var doorToRemove = Console.ReadLine();
+                        badge.Doors.Remove(doorToRemove);
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Enter door to add");
+                        var doorToAdd = Console.ReadLine();
+                        badge.Doors.Add(doorToAdd);
+                        break;
+
+                    case "3":
+                        addRemoveDoors = false;
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid number.");
+                        break;
+                }
+            }
         }
 
         private void ListAllBadges()
