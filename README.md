@@ -1,7 +1,7 @@
 # GoldBadgeFinal
-Welcome my Gold Badge Final Challenges project!
+Welcome to my Gold Badge Final Challenges project!
 
-This solution is broken down into three folder.  One for each challenge.  
+This solution is broken down into three folders.  One for each challenge.  
 Challenge 1: Cafe  
   This challenge has 4 projects: CafePOCO, CafeRepo, CafeUnitTest, and CafeUI.  This console app allows a user to build out a menu for a cafe by adding menu items, deleting menu   items, and showing a completed menu.
  
