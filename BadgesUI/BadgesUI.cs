@@ -55,6 +55,8 @@ namespace BadgesUI
         }
         private void AddBadge()
         {
+            Console.Clear();
+
             Console.WriteLine("What is the number on the badge?");
             var badgeId = int.Parse(Console.ReadLine());
 
@@ -73,13 +75,12 @@ namespace BadgesUI
 
                 if (inputCommand is "y")
                 {
-                    Console.WriteLine("List a door this it needs access to.");
+                    Console.WriteLine("List a door that it needs access to.");
                     var newDoor = Console.ReadLine();
                     doors.Add(newDoor);
                 }
                 else
                 {
-                    Console.WriteLine("Door(s) have been added to list.");
                     addingDoors = false;
                 }
             }
@@ -87,7 +88,7 @@ namespace BadgesUI
             bool isSuccessful = _badgeRepo.AddBadgeToDict(newBadge);
             if (isSuccessful)
             {
-                Console.WriteLine("Badge has been added to database!");
+                Console.WriteLine("\nBadge has been added to database!");
             }
             else
             {
@@ -104,41 +105,52 @@ namespace BadgesUI
             var badgeId = int.Parse(Console.ReadLine());
 
             Badge badge = _badgeRepo.GetBadgeById(badgeId);
-            if(badge is null)
+            if (badge is null)
             {
-                Console.WriteLine("Badge does not exist.");
+                Console.WriteLine("Badge does not exist. Please enter a valid badge number.");
             }
-            Console.WriteLine($"{badge.ID} has access to doors {String.Join(" ",badge.Doors)}\n");
-
-            bool addRemoveDoors = true;
-            while (addRemoveDoors)
+            else
             {
-                Console.WriteLine("What would you like to do?\n" +
-                    "1.Remove a door\n" +
-                    "2.Add a door\n" +
-                    "3.Exit to menu\n");
+                Console.Clear();
 
-                var subMenuInput = Console.ReadLine();
-                switch (subMenuInput)
+               
+
+                bool addRemoveDoors = true;
+                while (addRemoveDoors)
                 {
-                    case "1":
-                        Console.WriteLine("Which door would you like to remove?");
-                        var doorToRemove = Console.ReadLine();
-                        badge.Doors.Remove(doorToRemove);
-                        break;
+                    Console.Clear();
 
-                    case "2":
-                        Console.WriteLine("Enter door to add");
-                        var doorToAdd = Console.ReadLine();
-                        badge.Doors.Add(doorToAdd);
-                        break;
+                    Console.WriteLine($"{badge.ID} has access to doors {String.Join(" ", badge.Doors)}\n");
 
-                    case "3":
-                        addRemoveDoors = false;
-                        break;
-                    default:
-                        Console.WriteLine("Please enter a valid number.");
-                        break;
+                    Console.WriteLine("What would you like to do?\n" +
+                        "1.Remove a door\n" +
+                        "2.Add a door\n" +
+                        "3.Exit to menu\n");
+
+                    var subMenuInput = Console.ReadLine();
+
+                    switch (subMenuInput)
+                    {
+                        case "1":
+                            Console.WriteLine("Which door would you like to remove?");
+                            var doorToRemove = Console.ReadLine();
+                            badge.Doors.Remove(doorToRemove);
+                            break;
+
+                        case "2":
+                            Console.WriteLine("Enter door to add");
+                            var doorToAdd = Console.ReadLine();
+                            badge.Doors.Add(doorToAdd);
+                            break;
+
+                        case "3":
+                            addRemoveDoors = false;
+                            break;
+                        default:
+                            Console.WriteLine("Please enter a valid number.");
+                            Console.ReadKey();
+                            break;
+                    }
                 }
             }
         }
@@ -146,12 +158,12 @@ namespace BadgesUI
         private void ListAllBadges()
         {
             Console.Clear();
-            Console.WriteLine("Badge#  Door Access");
+            Console.WriteLine($"{"Badge#",-10} {"Door Access",-20}");
 
             Dictionary<int, List<string>> dictionary = _badgeRepo.ShowAllBadges();
             foreach(KeyValuePair<int, List<string>> kvp in dictionary)
             {
-                Console.WriteLine($"{kvp.Key}     {String.Join(" ",kvp.Value)}");
+                Console.WriteLine($"{kvp.Key,-10} {String.Join(" ",kvp.Value),-20}");
             }
         }
     }
