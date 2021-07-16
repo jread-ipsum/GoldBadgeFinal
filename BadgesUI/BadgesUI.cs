@@ -103,7 +103,14 @@ namespace BadgesUI
 
         private void ListAllBadges()
         {
+            Console.Clear();
+            Console.WriteLine("Badge#  Door Access");
 
+            Dictionary<int, List<string>> dictionary = _badgeRepo.ShowAllBadges();
+            foreach(KeyValuePair<int, List<string>> kvp in dictionary)
+            {
+                Console.WriteLine($"{kvp.Key}     {String.Join(" ",kvp.Value)}");
+            }
         }
     }
 }

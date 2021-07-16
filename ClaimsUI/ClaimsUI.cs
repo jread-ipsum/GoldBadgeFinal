@@ -49,7 +49,6 @@ namespace ClaimsUI
                         Console.WriteLine("Please enter a valid number.");
                         break;
                 }
-
                 Console.WriteLine("\npress any key to continue...");
                 Console.ReadKey();
                 Console.Clear();
@@ -58,7 +57,6 @@ namespace ClaimsUI
 
         private void SeeAllClaims()
         {
-            
             Console.Clear();
             Console.WriteLine("==========================Claims Queue==========================\n");
 
