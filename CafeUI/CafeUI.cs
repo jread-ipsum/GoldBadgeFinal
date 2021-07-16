@@ -89,7 +89,15 @@ namespace CafeUI
 
             Console.Clear();
             Console.WriteLine("Enter a price for the meal.");
-            newMenuItem.Price = double.Parse(Console.ReadLine());
+
+            double price;
+            var priceString = Console.ReadLine();
+            if (!double.TryParse(priceString, out price))
+            {
+                Console.WriteLine("Sorry that was not a valid price input.");
+                return;
+            }
+            newMenuItem.Price = price;
 
             _menuItemRepository.AddItemsToMenu(newMenuItem);
 
@@ -101,7 +109,14 @@ namespace CafeUI
             Console.Clear();
 
             Console.WriteLine("Enter the meal number for the item you would like to remove.");
-            int mealNumber = int.Parse(Console.ReadLine());
+
+            int mealNumber;
+            var mealNumberString = Console.ReadLine();
+            if(!int.TryParse(mealNumberString, out mealNumber))
+            {
+                Console.WriteLine("Sorry that was not valid meal number.");
+                return;
+            }
 
             MenuItem menuItem = _menuItemRepository.GetItemByMealNumber(mealNumber);
             if (menuItem is null)
