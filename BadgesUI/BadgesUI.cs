@@ -1,4 +1,5 @@
-﻿using BadgesRepo;
+﻿using BadgesPOCO;
+using BadgesRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,44 @@ namespace BadgesUI
         }
         private void AddBadge()
         {
+            Console.WriteLine("What is the number on the badge?");
+            var badgeId = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("List a door that it needs access to.");
+            var door = Console.ReadLine();
+
+            List<string> doors = new List<string>();
+            doors.Add(door);
+
+            bool addingDoors = true;
+            while (addingDoors)
+            {
+                Console.Clear();
+                Console.WriteLine("Would you like to add more doors(y/n)?");
+                var inputCommand = Console.ReadLine();
+
+                if (inputCommand is "y")
+                {
+                    Console.WriteLine("List a door this it needs access to.");
+                    var newDoor = Console.ReadLine();
+                    doors.Add(newDoor);
+                }
+                else
+                {
+                    Console.WriteLine("Door(s) have been added to list.");
+                    addingDoors = false;
+                }
+            }
+            Badge newBadge = new Badge(badgeId, doors);
+            bool isSuccessful = _badgeRepo.AddBadgeToDict(newBadge);
+            if (isSuccessful)
+            {
+                Console.WriteLine("Badge has been added to database!");
+            }
+            else
+            {
+                Console.WriteLine("Badge could not be added to database.");
+            }
 
         }
 
