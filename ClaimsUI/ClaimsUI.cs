@@ -86,6 +86,8 @@ namespace ClaimsUI
             if(dealNow is "y")
             {
                 _claimRepo.RemoveClaimFromQueue();
+                Console.WriteLine("Claim has been pulled from Queue. Press any key to continue.");
+                Console.ReadKey();
             }
         }
 
@@ -99,29 +101,35 @@ namespace ClaimsUI
 
             int inputClaimType = int.Parse(Console.ReadLine());
             Claim.ClaimType claimType = (Claim.ClaimType)inputClaimType;
-
-            Console.WriteLine("\nEnter a description of the claim.");
-            var description = Console.ReadLine();
-
-            Console.WriteLine("\nEnter the claim amount.");
-            double claimAmount = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("\nEnter date of the incident(yyyy,mm,dd)");
-            var incidentDate = DateTime.Parse(Console.ReadLine());
-
-            Console.WriteLine("\nEnter the date of the claim(yyyy,mm,dd)");
-            var claimDate = DateTime.Parse(Console.ReadLine());
-
-            Claim newClaim = new Claim(claimType, description, claimAmount, incidentDate, claimDate);
-
-            bool isSuccessful = _claimRepo.AddClaimToQueue(newClaim);
-            if (isSuccessful)
+            if (claimType is Claim.ClaimType.car || claimType is Claim.ClaimType.home || claimType is Claim.ClaimType.theft)
             {
-                Console.WriteLine("new claim has been successfully added to Queue.");
+                Console.WriteLine("\nEnter a description of the claim.");
+                var description = Console.ReadLine();
+
+                Console.WriteLine("\nEnter the claim amount.");
+                double claimAmount = double.Parse(Console.ReadLine());
+
+                Console.WriteLine("\nEnter date of the incident(yyyy,mm,dd)");
+                var incidentDate = DateTime.Parse(Console.ReadLine());
+
+                Console.WriteLine("\nEnter the date of the claim(yyyy,mm,dd)");
+                var claimDate = DateTime.Parse(Console.ReadLine());
+
+                Claim newClaim = new Claim(claimType, description, claimAmount, incidentDate, claimDate);
+
+                bool isSuccessful = _claimRepo.AddClaimToQueue(newClaim);
+                if (isSuccessful)
+                {
+                    Console.WriteLine("new claim has been successfully added to Queue.");
+                }
+                else
+                {
+                    Console.WriteLine("new claim could not be added to Queue.");
+                }
             }
             else
             {
-                Console.WriteLine("new claim could not be added to Queue.");
+                Console.WriteLine("Invalid input for claim type.");
             }
         }
 
